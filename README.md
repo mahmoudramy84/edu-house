@@ -13,6 +13,9 @@ Edu-House is an online educational platform built using the MERN stack. It provi
 - **Course Management**: View, add, edit, and delete courses.
 - **Lesson Integration**: Each course includes a series of lessons, which can contain videos and other resources.
 - **Track Navigation**: Structured learning paths that guide students through related courses.
+- **CI/CD Integration**: Automated testing, building, and deployment using GitHub Actions.
+- **Containerization**: Docker used for packaging the application, ensuring consistency across environments.
+- **Infrastructure as Code**: AWS deployment and server management handled via Ansible.
 
 
 ## Tech Stack
@@ -20,3 +23,7 @@ Edu-House is an online educational platform built using the MERN stack. It provi
 - **Express.js**: Backend framework to handle API requests and responses.
 - **React.js**: Frontend library to build the user interface.
 - **Node.js**: Runtime environment for executing JavaScript on the server side.
+- **Docker**: Containerization platform for deploying the application consistently across environments.
+- **AWS**: Hosting and deployment of the application.
+- **GitHub Actions**: Continuous Integration and Continuous Deployment (CI/CD) pipeline.
+- **Ansible**: Infrastructure as Code (IaC) for managing server configurations and deployments.
