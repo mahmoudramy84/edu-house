@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Navbar } from "@/components/common";
+import { Navbar, ThemeSwitcher } from "@/components/common";
+import Providers from "./Providers";
 
 export const metadata: Metadata = {
   title: "Edu City",
@@ -15,8 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="">
-        <Navbar />
-        {children}
+        <Providers attribute="class" defaultTheme="system">
+          {/* <Navbar /> */}
+          <ThemeSwitcher />
+          {children}
+        </Providers>
       </body>
     </html>
   );
