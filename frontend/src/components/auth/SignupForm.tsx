@@ -2,43 +2,22 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { z } from "zod";
 import { InputField } from "../common";
+import Link from "next/link";
+import { SignupFormSchema, TSignupForm } from "./SignupFormSchema";
 
-const AuthForm = () => {
-  const authFormSchema = z
-    .object({
-      first_name: z.string().min(1, { message: "First Name is required" }),
-      last_name: z.string().min(1, { message: "Last Name is required" }),
-      email: z
-        .string()
-        .min(1, { message: "Email is required " })
-        .email({ message: "Not a valid email" }),
-      password: z
-        .string()
-        .min(8, { message: "Password must be at least 8 characters" })
-        .regex(
-          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
-        ),
-      confirm_password: z.string(),
-    })
-    .refine((data) => data.password === data.confirm_password, {
-      message: "Passwords do not match",
-      path: ["confirm_password"],
-    });
-
-  type TAuthForm = z.infer<typeof authFormSchema>;
+const SignupForm = () => {
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<TAuthForm>({
-    resolver: zodResolver(authFormSchema),
+  } = useForm<TSignupForm>({
+    resolver: zodResolver(SignupFormSchema),
     mode: "onChange",
   });
 
-  const onSubmit: SubmitHandler<TAuthForm> = ({
+  const onSubmit: SubmitHandler<TSignupForm> = ({
     first_name,
     last_name,
     email,
@@ -106,12 +85,18 @@ const AuthForm = () => {
 
       <button
         type="submit"
-        className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none  font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700"
+        className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none  font-medium rounded-lg  w-full sm:w-auto px-4 py-2 text-xs text-center dark:bg-blue-600 dark:hover:bg-blue-700"
       >
-        Submit
+        Signup
       </button>
+      <p className="text-center text-xs mt-4 text-gray-600 dark:text-gray-300">
+        Already have an account?{" "}
+        <Link href="/auth/login" className="text-blue-600 hover:underline">
+          Login
+        </Link>
+      </p>
     </form>
   );
 };
 
-export default AuthForm;
+export default SignupForm;
