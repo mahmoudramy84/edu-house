@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="">
         <Providers attribute="class" defaultTheme="system">
-          {/* <Navbar /> */}
+          <Navbar />
           <ThemeSwitcher />
           {children}
         </Providers>
