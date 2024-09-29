@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { FaShoppingBag } from "react-icons/fa";
 import { FaMagnifyingGlass } from "react-icons/fa6";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 const Navbar = () => {
   return (
@@ -87,7 +88,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 flex-wrap">
           {/* search */}
           <div
             className="ring-2 ring-gray-300 rounded-full px-2 text-xs
@@ -119,6 +120,7 @@ const Navbar = () => {
               Login
             </Link>
           </div>
+          <ThemeSwitcher />
         </div>
       </div>
     </nav>
