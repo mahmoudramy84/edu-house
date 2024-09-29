@@ -11,7 +11,7 @@ export const loginOptions = {
     async authorize(credentials) {
       try {
         const res = await axios.post(
-          `${process.env.NEXT_BASE_URL}/auth/login`,
+          `${process.env.NEXT_PUBLIC_BASE_URL}/auth/login`,
           {
             email: credentials?.email,
             password: credentials?.password,
@@ -19,7 +19,7 @@ export const loginOptions = {
         );
 
         if (res.status === 200) {
-          console.log("Successfully logged in with credentials", res.data);
+          console.log("Successfully logged in ");
           return res.data;
         }
       } catch (error) {

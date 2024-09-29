@@ -5,6 +5,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { InputField } from "../common";
 import Link from "next/link";
 import { LoginFormSchema, TLoginForm } from "./LoginFormSchema";
+import { signIn } from "next-auth/react";
 
 const LoginForm = () => {
   const {
@@ -17,12 +18,17 @@ const LoginForm = () => {
     mode: "onChange",
   });
 
-  const onSubmit: SubmitHandler<TLoginForm> = ({ email, password }) => {
-    const user = {
+  const onSubmit: SubmitHandler<TLoginForm> = async ({ email, password }) => {
+    const user = await signIn("credentials", {
+      redirect:false,
       email,
       password,
-    };
-    console.log(user);
+    });
+    if (user?.error) {
+      console.error("Login failed", user.error);
+    } else {
+      console.log("Login successful", user);
+    }
     reset();
   };
 

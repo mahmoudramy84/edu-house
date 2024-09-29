@@ -13,7 +13,7 @@ export const signupOptions = {
     async authorize(credentials) {
       try {
         const res = await axios.post(
-          `${process.env.NEXT_BASE_URL}/auth/signup`,
+          `${process.env.NEXT_PUBLIC_BASE_URL}/auth/signup`,
           {
             first_name: credentials?.first_name,
             last_name: credentials?.last_name,
@@ -23,7 +23,7 @@ export const signupOptions = {
         );
 
         if (res.status === 200) {
-          console.log("create account successfully ", res.data);
+          console.log("create account successfully ");
           return res.data;
         }
       } catch (error) {

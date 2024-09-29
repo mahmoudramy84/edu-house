@@ -5,6 +5,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { InputField } from "../common";
 import Link from "next/link";
 import { SignupFormSchema, TSignupForm } from "./SignupFormSchema";
+import axios from "axios";
 
 const SignupForm = () => {
   const {
@@ -17,19 +18,29 @@ const SignupForm = () => {
     mode: "onChange",
   });
 
-  const onSubmit: SubmitHandler<TSignupForm> = ({
+  const onSubmit: SubmitHandler<TSignupForm> = async ({
     first_name,
     last_name,
     email,
     password,
   }) => {
-    const user = {
-      first_name,
-      last_name,
-      email,
-      password,
-    };
-    console.log(user);
+    try {
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/auth/signup`,
+        {
+          first_name,
+          last_name,
+          email,
+          password,
+        }
+      );
+
+      if (response.status === 201) {
+        console.log("Account created successfully");
+      }
+    } catch (error) {
+      console.error("Error creating account", error);
+    }
     reset();
   };
 
