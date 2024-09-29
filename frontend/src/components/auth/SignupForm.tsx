@@ -19,21 +19,26 @@ const SignupForm = () => {
   });
 
   const onSubmit: SubmitHandler<TSignupForm> = async ({
-    first_name,
-    last_name,
+    // first_name,
+    // last_name,
+    name,
     email,
     password,
   }) => {
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/auth/signup`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}/users/register`,
         {
-          first_name,
-          last_name,
+          // first_name,
+          // last_name,
+          name,
           email,
           password,
         }
       );
+
+      console.log('response', response);
+      
 
       if (response.status === 201) {
         console.log("Account created successfully");
@@ -77,7 +82,7 @@ const SignupForm = () => {
       />
 
       <div className="grid md:grid-cols-2 md:gap-6">
-        <InputField
+        {/* <InputField
           type="text"
           id="first_name"
           register={register("first_name")}
@@ -91,7 +96,19 @@ const SignupForm = () => {
           register={register("last_name")}
           label={" Last name"}
           errors={errors.last_name?.message}
+
+        /> */}
+
+
+<InputField
+          type="text"
+          id="name"
+          register={register("name")}
+          errors={errors.name?.message}
+          label={"Name"}
         />
+
+
       </div>
 
       <button

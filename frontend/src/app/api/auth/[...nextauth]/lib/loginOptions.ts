@@ -11,7 +11,7 @@ export const loginOptions = {
     async authorize(credentials) {
       try {
         const res = await axios.post(
-          `${process.env.NEXT_PUBLIC_BASE_URL}/auth/login`,
+          `${process.env.NEXT_PUBLIC_BASE_URL}/users/login`,
           {
             email: credentials?.email,
             password: credentials?.password,
