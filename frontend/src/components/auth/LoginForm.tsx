@@ -33,6 +33,7 @@ const LoginForm = () => {
     >
       <h1 className="text-center text-black dark:text-white font-bold text-xl mb-5">
         Login
+        <p className="text-xs font-normal ">logo will be here</p>
       </h1>
       <InputField
         type="email"
