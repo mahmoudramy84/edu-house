@@ -6,6 +6,7 @@ const port = process.env.PORT || 3000;
 const trackRoutes = require('./routes/tracks');
 const courseRoutes = require('./routes/courses');
 const lessonRoutes = require('./routes/lessons');
+const userRoutes = require('./routes/users');
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ mongoose.connect(mongoURI).then(() => {
 app.use('/tracks', trackRoutes);
 app.use('/courses', courseRoutes);
 app.use('/lessons', lessonRoutes);
+app.use('/users', userRoutes);
 
 
 app.listen(port, () => {
