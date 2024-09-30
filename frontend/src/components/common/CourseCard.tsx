@@ -6,9 +6,9 @@ const CourseCard = () => {
     <div className=''>
         <Image src={'/images/courses_images/course_1.webp'} alt='course_1' width={500} height={500}/>
 
-
+{/* course content */}
 <div>
-    
+
 </div>
 
 

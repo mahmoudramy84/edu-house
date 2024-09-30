@@ -6,15 +6,15 @@ const CategoryCard = ({ title, Icon }: TCategory) => {
     <div
       className="bg-lightGray dark:bg-gray-900 dark:text-white
                 flex flex-col items-center justify-center space-y-4 p-6 rounded-lg
-                transition-all duration-300 w-[100%]
+                w-[100%]
                 
                 "
     >
       <div
-        className="bg-white rounded-full w-[80px] h-[80px] flex items-center justify-center group
+        className="bg-white rounded-full w-[80px] h-[80px] flex items-center justify-center 
     "
       >
-        <Icon className="text-2xl text-customPurple    transition-transform duration-300 group-hover:scale-150" />
+        <Icon className="text-2xl text-customPurple" />
       </div>
       <div className="text-lg ">{title}</div>
       <div className="text-gray-700 dark:text-white text-[13px] flex flex-col">
