@@ -7,8 +7,7 @@ export const LoginFormSchema = z.object({
     .email({ message: "Not a valid email" }),
   password: z
     .string()
-    .min(8, { message: "Password must be at least 8 characters" })
-    ,
+    .min(8, { message: "Password must be at least 8 characters" }),
 });
 
 export type TLoginForm = z.infer<typeof LoginFormSchema>;
