@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import { Navbar } from "@/components/common";
+import { Footer, Navbar } from "@/components/common";
 import Providers from "./Providers";
 
-
 import "./globals.css";
-
 
 export const metadata: Metadata = {
   title: "Edu House",
@@ -21,9 +19,8 @@ export default function RootLayout({
       <body className="h-screen relative">
         <Providers attribute="class" defaultTheme="system">
           <Navbar />
-       <div className="pt-12">
-       {children}
-       </div>
+          <div className="pt-12">{children}</div>
+          <Footer/>
         </Providers>
       </body>
     </html>
