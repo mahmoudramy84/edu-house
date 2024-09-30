@@ -1,7 +1,10 @@
-import { Landing } from "@/components/homeComponents";
+import { Landing, TopCategories } from "@/components/homeComponents";
 
 export default function Home() {
   return (
-<><Landing/></>
+    <>
+      <Landing />
+      <TopCategories/>
+    </>
   );
 }

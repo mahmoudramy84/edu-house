@@ -19,22 +19,27 @@
     );
   }
 }
- 
 
 .wave-path {
   animation: waveMovement 6s ease-in-out infinite;
 }
 
+.swiper-wrapper {
+  margin-bottom: 40px;
+  position: relative;
+}
 
-/* @media (prefers-color-scheme: light) {
-  .wave-path {
-    fill: #0099ff;
+.swiper-pagination {
+  top: 50px;
+  .swiper-pagination-bullet {
+    background-color: #a8a7a7;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #5e199a;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .wave-path {
-    fill: #0099ff;
-  }
-} */
-
+html.dark .swiper-pagination-bullet {
+  background-color: #fff;
+}
