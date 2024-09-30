@@ -8,7 +8,7 @@ import ToggleMenuButton from "../ToggleMenuButton";
 
 const Navbar = () => {
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900">
+    <nav className="bg-white border-gray-200 dark:bg-gray-900 fixed top-0 left-0 w-full z-50">
       <div className="flex flex-wrap items-center justify-between mx-auto p-4 px-12">
         <Link
           href="/"
@@ -93,7 +93,7 @@ const Navbar = () => {
           <div className="flex items-center gap-4">
             <Link
               href="/auth/login"
-              className="bg-[#5E199A] dark:bg-purple-800 text-white rounded-lg   px-4 py-2 text-sm"
+              className="bg-customPurple dark:bg-purple-800 text-white rounded-lg   px-4 py-2 text-sm"
             >
               Login
             </Link>

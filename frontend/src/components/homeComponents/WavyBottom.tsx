@@ -10,12 +10,12 @@ const WavyBottom = () => {
       >
         <defs>
           <linearGradient id="wave-gradient-light" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0%" stop-color="#4f46e5" />
-            <stop offset="100%" stop-color="#1e40af" />
+            <stop offset="0%" stopColor="#4f46e5" />
+            <stop offset="100%" stopColor="#1e40af" />
           </linearGradient>
           <linearGradient id="wave-gradient-dark" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0%" stop-color="#1e3a8a" />
-            <stop offset="100%" stop-color="#1e293b" />
+            <stop offset="0%" stopColor="#1e3a8a" />
+            <stop offset="100%" stopColor="#1e293b" />
           </linearGradient>
         </defs>
         <path
