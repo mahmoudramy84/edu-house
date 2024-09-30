@@ -1,4 +1,3 @@
-// SectionHeader.tsx
 import React from "react";
 
 interface TSectionHeaderProps {

@@ -34,6 +34,12 @@ const WhyChooseUs = () => {
       description: "Earn certificates that are recognized in the industry.",
       icon: "🏆",
     },
+    {
+      id: 6,
+      title: "Work Opportunities",
+      description: "Get access to job placements and internships.",
+      icon: "💼",
+    },
   ];
 
   const renderReasons = useMemo(() => {

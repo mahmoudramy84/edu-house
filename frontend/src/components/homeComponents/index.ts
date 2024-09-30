@@ -7,6 +7,7 @@ import CategoryCard from "./CategoryCard";
 import CategoriesSwiper from "./CategoriesSwiper";
 import MostPopularCourses from "./MostPopularCourses";
 import WhyChooseUs from "./WhyChooseUs";
+import BestInstructors from "./BestInstructors";
 
 
 export {
@@ -18,6 +19,7 @@ export {
   CategoryCard,
   CategoriesSwiper,
   MostPopularCourses,
-WhyChooseUs
+WhyChooseUs,
+BestInstructors
 };
 

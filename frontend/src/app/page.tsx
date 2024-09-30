@@ -1,4 +1,5 @@
 import {
+  BestInstructors,
   Landing,
   MostPopularCourses,
   TopCategories,
@@ -12,6 +13,7 @@ export default function Home() {
       <TopCategories />
       <MostPopularCourses />
       <WhyChooseUs/>
+      <BestInstructors/>
     </>
   );
 }

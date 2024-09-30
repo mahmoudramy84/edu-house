@@ -12,6 +12,10 @@ const config: Config = {
         customPurple: "#5E199A",
         lightGray: "#EEF2F6",
       },
+      container: {
+        center: true,
+        padding: "1rem",
+      },
     },
   },
 
