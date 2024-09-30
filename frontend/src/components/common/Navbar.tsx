@@ -8,7 +8,7 @@ import ToggleMenuButton from "../ToggleMenuButton";
 
 const Navbar = () => {
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900 fixed top-0 left-0 w-full z-50">
+    <nav className="bg-white border-gray-200 dark:bg-gray-900 fixed top-0 left-0 w-full z-50 shadow-lg dark:shadow-none">
       <div className="flex flex-wrap items-center justify-between mx-auto p-4 px-12">
         <Link
           href="/"
