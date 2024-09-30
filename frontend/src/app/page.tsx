@@ -2,6 +2,7 @@ import {
   Landing,
   MostPopularCourses,
   TopCategories,
+  WhyChooseUs,
 } from "@/components/homeComponents";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <Landing />
       <TopCategories />
       <MostPopularCourses />
+      <WhyChooseUs/>
     </>
   );
 }

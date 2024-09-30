@@ -6,6 +6,8 @@ import TopCategories from "./TopCategories";
 import CategoryCard from "./CategoryCard";
 import CategoriesSwiper from "./CategoriesSwiper";
 import MostPopularCourses from "./MostPopularCourses";
+import WhyChooseUs from "./WhyChooseUs";
+
 
 export {
   Landing,
@@ -16,4 +18,6 @@ export {
   CategoryCard,
   CategoriesSwiper,
   MostPopularCourses,
+WhyChooseUs
 };
+
