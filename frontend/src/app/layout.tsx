@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Navbar, ThemeSwitcher } from "@/components/common";
+import { Navbar } from "@/components/common";
 import Providers from "./Providers";
 
 export const metadata: Metadata = {
@@ -15,10 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="">
+      <body className="bg-gray-50 h-screen relative">
         <Providers attribute="class" defaultTheme="system">
           <Navbar />
-          <ThemeSwitcher />
           {children}
         </Providers>
       </body>
