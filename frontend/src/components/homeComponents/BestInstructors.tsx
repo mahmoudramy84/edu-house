@@ -98,7 +98,7 @@ const BestInstructors = () => {
                     </p>
                     <p
                       className="text-gray-600 dark:text-gray-300 mb-2 text-sm
-                    flex items-center gap-1.5 "
+                    flex items-center justify-center gap-1.5 "
                     >
                       <CiPlay1 className=" " />
                       {instructor.coursesCount} Courses

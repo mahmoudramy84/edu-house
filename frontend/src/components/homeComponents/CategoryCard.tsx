@@ -16,7 +16,7 @@ const CategoryCard = ({ title, Icon }: TCategory) => {
       >
         <Icon className="text-2xl text-customPurple" />
       </div>
-      <div className="text-lg ">{title}</div>
+      <div className="text-lg whitespace-nowrap">{title}</div>
       <div className="text-gray-700 dark:text-white text-[13px] flex flex-col">
         <span>908+</span> Courses
       </div>
