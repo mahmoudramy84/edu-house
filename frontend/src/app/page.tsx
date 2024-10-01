@@ -1,9 +1,11 @@
 import {
   BecomeAStudentOrInstructor,
   BestInstructors,
+  JoinUs,
   Landing,
   MostPopularCourses,
   TopCategories,
+  UpcomingEvents,
   WhyChooseUs,
 } from "@/components/homeComponents";
 
@@ -16,6 +18,8 @@ export default function Home() {
       <WhyChooseUs/>
       <BestInstructors/>
       <BecomeAStudentOrInstructor/>
+      <JoinUs/>
+      <UpcomingEvents/>
     </>
   );
 }

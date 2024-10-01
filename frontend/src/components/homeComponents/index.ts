@@ -9,6 +9,8 @@ import MostPopularCourses from "./MostPopularCourses";
 import WhyChooseUs from "./WhyChooseUs";
 import BestInstructors from "./BestInstructors";
 import BecomeAStudentOrInstructor from "./BecomeAStudentOrInstructor";
+import JoinUs from "./JoinUs";
+import UpcomingEvents from "./UpcomingEvents";
 
 
 
@@ -24,5 +26,6 @@ export {
 WhyChooseUs,
 BestInstructors
 ,BecomeAStudentOrInstructor
+,JoinUs,UpcomingEvents
 };
 

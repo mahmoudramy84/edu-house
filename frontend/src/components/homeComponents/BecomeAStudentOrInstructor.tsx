@@ -1,11 +1,10 @@
 import Image from "next/image";
-import Link from "next/link";
+import { ButtonLink } from "../common";
 
 const BecomeAStudentOrInstructor = () => {
   return (
     <section className="py-16">
       <div className="container mx-auto space-y-12">
-        {/* Become an Instructor Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="order-1 lg:order-none">
             <Image
@@ -24,17 +23,10 @@ const BecomeAStudentOrInstructor = () => {
               favorite subjects to learners all over the world. Share your
               knowledge, build your brand, and make an impact.
             </p>
-            <Link
-              href="/apply-instructor"
-              className="px-6 py-3 bg-customPurple text-white rounded-lg 
-                hover:bg-purple-800 transition-all flex items-center gap-2 w-fit"
-            >
-              Apply Now
-            </Link>
+            <ButtonLink href="#"> Apply Now</ButtonLink>
           </div>
         </div>
 
-        {/* Become a Student Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="order-2 lg:order-none">
             <h2 className="text-3xl font-bold mb-4">Become a Student</h2>
@@ -43,14 +35,7 @@ const BecomeAStudentOrInstructor = () => {
               you&apos;re just starting or advancing your skills, we have
               something for everyone. Begin your journey to success with us.
             </p>
-            <Link
-              href="/apply-student"
-              className="px-6 py-3 bg-customPurple text-white rounded-lg 
-                hover:bg-purple-800 transition-all flex items-center gap-2 w-fit"
-            >
-              {" "}
-              Apply Now
-            </Link>
+            <ButtonLink href="#"> Apply Now</ButtonLink>
           </div>
 
           <div className="order-1 lg:order-none">
