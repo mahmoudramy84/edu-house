@@ -1,10 +1,9 @@
-import { ButtonLink, SectionHeader } from "@/components/common";
-import { useForm } from "react-hook-form";
+import { SectionHeader } from "@/components/common";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <div className=" py-16">
+    <div className=" py-16 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16">
           {" "}
@@ -16,7 +15,6 @@ const Contact = () => {
         </div>
 
         <div className="grid grid-cols-12 gap-8">
-          {/* Left Section (4 columns) */}
           <div className="col-span-12 md:col-span-4">
             <div className="flex flex-col space-y-8">
               <div className="flex items-center space-x-4">
@@ -57,7 +55,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Right Section (8 columns) */}
           <div className="col-span-12 md:col-span-8">
             <form className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-8 space-y-6">
               <div>
