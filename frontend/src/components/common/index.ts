@@ -6,7 +6,9 @@ import SectionHeader from "./SectionHeader";
 import CourseCard from "./CourseCard";
 import ButtonLink from "./ButtonLink";
 import EventCard from "./EventCard";
-
+import Search from "./Search";
+import ShoppingCartIcon from "./ShoppingCartIcon";
+import NavLinks from "./NavLinks";
 
 
 
@@ -16,5 +18,6 @@ import EventCard from "./EventCard";
 
 export { Navbar, ThemeSwitcher, InputField , Footer,SectionHeader, CourseCard, ButtonLink
     ,EventCard,
+    Search,ShoppingCartIcon,NavLinks
     
 };
