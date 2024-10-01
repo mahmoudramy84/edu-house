@@ -20,8 +20,8 @@ export default function Home() {
       <WhyChooseUs />
       <BestInstructors />
       <StudentTestimonials />
-      <UpcomingEvents />
       <BecomeAStudentOrInstructor />
+      <UpcomingEvents />
     </>
   );
 }
