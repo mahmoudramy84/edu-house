@@ -1,7 +1,8 @@
-"use client"; // Ensure this component is treated as a Client Component
+"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { MouseEventHandler } from "react";
 
 const navLinks = [
   { link: "/", label: "Home" },
@@ -11,13 +12,17 @@ const navLinks = [
   { link: "/contact", label: "Contact" },
 ];
 
-const NavLinks = () => {
+type TNavLinksProps = {
+  handleLinkClick: () => void;
+};
+const NavLinks = ({ handleLinkClick }: TNavLinksProps) => {
   const currentPath = usePathname();
 
   const renderNavLinks = navLinks.map(({ link, label }) => (
     <li key={link}>
       <Link
         href={link}
+        onClick={handleLinkClick}
         className={`block py-2 px-3 rounded  transition-colors duration-300 
           ${
             currentPath === link

@@ -6,13 +6,17 @@ import Search from "./Search";
 import ShoppingCartIcon from "./ShoppingCartIcon";
 import NavLinks from "./NavLinks";
 import { FaBars } from "react-icons/fa";
-import { useState } from "react";
+import { MouseEventHandler, useState } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleToggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleLinkClick = (): void => {
+    setIsOpen(false);
   };
 
   return (
@@ -34,7 +38,7 @@ const Navbar = () => {
             isOpen ? "block" : "hidden"
           } lg:block lg:w-auto flex-1`}
         >
-          <NavLinks />
+          <NavLinks handleLinkClick={handleLinkClick} />
         </div>
 
         <div className="flex items-center gap-4 flex-wrap w-full sm:w-auto justify-between sm:justify-end">
