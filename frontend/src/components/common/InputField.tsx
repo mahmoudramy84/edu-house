@@ -1,5 +1,6 @@
 import React from "react";
 import { UseFormRegisterReturn } from "react-hook-form";
+import { FaEye, FaEyeLowVision } from "react-icons/fa6";
 
 type TInputProps = {
   type: string;
@@ -7,13 +8,25 @@ type TInputProps = {
   label: string;
   register: UseFormRegisterReturn<string>;
   errors?: string;
+  showPassword?: boolean;
+  toggleShowPassword?: () => void;
 };
 
-const InputField = ({ type, id, label, register, errors }: TInputProps) => {
+const InputField = ({
+  type,
+  id,
+  label,
+  register,
+  errors,
+  showPassword,
+  toggleShowPassword,
+}: TInputProps) => {
+  const inputType = type === "password" && showPassword ? "text" : type;
+
   return (
     <div className="relative z-0 w-full mb-5 group">
       <input
-        type={type}
+        type={inputType}
         id={id}
         className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
         placeholder=" "
@@ -26,6 +39,16 @@ const InputField = ({ type, id, label, register, errors }: TInputProps) => {
         {label}
       </label>
       <p className="text-[10px] text-red-600 dark:text-[#ff0000]">{errors}</p>
+
+      {type === "password" && toggleShowPassword && (
+        <button
+          type="button"
+          onClick={toggleShowPassword}
+          className="absolute right-0 top-3 text-gray-600 dark:text-gray-300"
+        >
+          {showPassword ? <FaEye /> : <FaEyeLowVision />}
+        </button>
+      )}
     </div>
   );
 };

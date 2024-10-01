@@ -1,6 +1,6 @@
 "use client";
 import { zodResolver } from "@hookform/resolvers/zod";
-import React from "react";
+import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { InputField } from "../common";
 import Link from "next/link";
@@ -37,8 +37,7 @@ const SignupForm = () => {
         }
       );
 
-      console.log('response', response);
-      
+      console.log("response", response);
 
       if (response.status === 201) {
         console.log("Account created successfully");
@@ -48,6 +47,8 @@ const SignupForm = () => {
     }
     reset();
   };
+
+  const [showPassword, setShowPassword] = useState<boolean>(false);
 
   return (
     <form
@@ -71,6 +72,8 @@ const SignupForm = () => {
         register={register("password")}
         errors={errors.password?.message}
         label="Password"
+        showPassword={showPassword}
+        toggleShowPassword={() => setShowPassword(!showPassword)}
       />
 
       <InputField
@@ -99,16 +102,13 @@ const SignupForm = () => {
 
         /> */}
 
-
-<InputField
+        <InputField
           type="text"
           id="name"
           register={register("name")}
           errors={errors.name?.message}
           label={"Name"}
         />
-
-
       </div>
 
       <button
