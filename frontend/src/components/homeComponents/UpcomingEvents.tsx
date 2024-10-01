@@ -33,8 +33,8 @@ const events = [
 const UpcomingEvents = () => {
   return (
     <section className="py-16">
-      <div className="container text-center mx-auto">
-        <SectionHeader title="Upcoming Events" description="lorem" />
+      <div className="container mx-auto">
+        <SectionHeader title="Upcoming Events" description="lorem" isCenter={true}/>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           {events.map((event) => (
