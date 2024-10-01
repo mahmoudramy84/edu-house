@@ -8,6 +8,8 @@ import CategoriesSwiper from "./CategoriesSwiper";
 import MostPopularCourses from "./MostPopularCourses";
 import WhyChooseUs from "./WhyChooseUs";
 import BestInstructors from "./BestInstructors";
+import BecomeAStudentOrInstructor from "./BecomeAStudentOrInstructor";
+
 
 
 export {
@@ -21,5 +23,6 @@ export {
   MostPopularCourses,
 WhyChooseUs,
 BestInstructors
+,BecomeAStudentOrInstructor
 };
 

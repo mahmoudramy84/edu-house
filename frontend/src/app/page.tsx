@@ -1,4 +1,5 @@
 import {
+  BecomeAStudentOrInstructor,
   BestInstructors,
   Landing,
   MostPopularCourses,
@@ -14,6 +15,7 @@ export default function Home() {
       <MostPopularCourses />
       <WhyChooseUs/>
       <BestInstructors/>
+      <BecomeAStudentOrInstructor/>
     </>
   );
 }
