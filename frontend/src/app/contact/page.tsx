@@ -20,7 +20,7 @@ const Contact = () => {
           <div className="col-span-12 md:col-span-4">
             <div className="flex flex-col space-y-8">
               <div className="flex items-center space-x-4">
-                <FaEnvelope className="text-blue-600 text-2xl" />
+                <FaEnvelope className="text-customPurple dark:text-purple-400 text-2xl" />
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
                     Email
@@ -32,7 +32,7 @@ const Contact = () => {
               </div>
 
               <div className="flex items-center space-x-4">
-                <FaPhone className="text-blue-600 text-2xl" />
+                <FaPhone className="text-customPurple dark:text-purple-400 text-2xl" />
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
                     Phone
@@ -44,7 +44,7 @@ const Contact = () => {
               </div>
 
               <div className="flex items-center space-x-4">
-                <FaMapMarkerAlt className="text-blue-600 text-2xl" />
+                <FaMapMarkerAlt className="text-customPurple dark:text-purple-400 text-2xl" />
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
                     Location
@@ -103,7 +103,7 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                className="w-full bg-transparent text-customPurple dark:bg-customPurple hover:bg-customPurple hover:text-white dark:text-white py-2 px-4 rounded-md dark:hover:bg-purple-800 focus:outline-none border border-customPurple  "
               >
                 Send Message
               </button>

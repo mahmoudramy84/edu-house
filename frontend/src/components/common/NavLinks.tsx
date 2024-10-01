@@ -38,7 +38,7 @@ const NavLinks = ({ handleLinkClick }: TNavLinksProps) => {
   return (
     <ul
       className="font-medium flex flex-col rounded-lg rtl:space-x-reverse 
-        absolute left-0 top-20 w-full shadow-xl px-4 py-2 
+        absolute left-0 top-20 w-full shadow-xl px-4 py-4 
         xl:flex-row  xl:w-auto xl:relative xl:top-0 xl:mt-0 xl:shadow-none xl:px-0 xl:py-0
     bg-lightGray xl:bg-white dark:bg-gray-800 dark:border-gray-700"
     >
