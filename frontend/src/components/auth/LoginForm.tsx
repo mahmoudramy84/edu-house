@@ -34,7 +34,7 @@ const LoginForm = () => {
 
   return (
     <form
-      className="w-full sm:w-80 mx-auto bg-white dark:bg-gray-800 shadow-xl dark:shadow-gray-800 rounded-md p-6"
+      className="w-full sm:w-80 mx-auto bg-lightGray dark:bg-gray-800 shadow-xl dark:shadow-gray-800 rounded-md p-6"
       onSubmit={handleSubmit(onSubmit)}
     >
       <h1 className="text-center text-black dark:text-white font-bold text-xl mb-5">
