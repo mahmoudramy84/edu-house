@@ -3,7 +3,7 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <div className=" py-16 ">
+    <div className=" py-16 bg-[url('/images/bg_contact.jpg')] bg-center bg-no-repeat ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16">
           {" "}
