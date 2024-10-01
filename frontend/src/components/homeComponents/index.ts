@@ -11,6 +11,9 @@ import BestInstructors from "./BestInstructors";
 import BecomeAStudentOrInstructor from "./BecomeAStudentOrInstructor";
 import JoinUs from "./JoinUs";
 import UpcomingEvents from "./UpcomingEvents";
+import StudentTestimonials from "./StudentTestimonials";
+
+
 
 
 
@@ -26,6 +29,7 @@ export {
 WhyChooseUs,
 BestInstructors
 ,BecomeAStudentOrInstructor
-,JoinUs,UpcomingEvents
+,JoinUs,UpcomingEvents,StudentTestimonials
+
 };
 
