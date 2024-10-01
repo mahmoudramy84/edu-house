@@ -1,15 +1,13 @@
-"use client";
+'use client'
 import React from "react";
-import { SectionHeader } from "../common";
+import { ButtonLink, SectionHeader } from "../common";
 import { FreeMode, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Link from "next/link";
 import { MdOutlineArrowOutward } from "react-icons/md";
 
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-import { FaPlay } from "react-icons/fa";
 import { CiPlay1 } from "react-icons/ci";
 
 const instructors = [
@@ -61,13 +59,11 @@ const BestInstructors = () => {
               title="Learn from the Best Instructors"
               description="Meet our talented instructors who are here to guide you."
             />
-            <Link
-              href="#"
-              className="px-4 py-2 rounded-lg transition-all bg-customPurple text-white hover:bg-purple-800 flex items-center gap-2 w-fit"
-            >
+
+            <ButtonLink href="#">
               View all instructors
               <MdOutlineArrowOutward />
-            </Link>
+            </ButtonLink>
           </div>
 
           {/* Right Side - 8 Columns Swiper */}

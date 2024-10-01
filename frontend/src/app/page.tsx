@@ -4,6 +4,7 @@ import {
   JoinUs,
   Landing,
   MostPopularCourses,
+  StudentTestimonials,
   TopCategories,
   UpcomingEvents,
   WhyChooseUs,
@@ -15,11 +16,12 @@ export default function Home() {
       <Landing />
       <TopCategories />
       <MostPopularCourses />
-      <WhyChooseUs/>
-      <BestInstructors/>
-      <BecomeAStudentOrInstructor/>
-      <JoinUs/>
-      <UpcomingEvents/>
+      <JoinUs />
+      <WhyChooseUs />
+      <BestInstructors />
+      <StudentTestimonials />
+      <UpcomingEvents />
+      <BecomeAStudentOrInstructor />
     </>
   );
 }
