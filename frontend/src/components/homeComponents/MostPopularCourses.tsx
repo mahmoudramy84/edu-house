@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { SectionHeader } from "../common";
+import { CourseCard, SectionHeader } from "../common";
 import { categories } from "@/data/categories";
 
 const MostPopularCourses = () => {
@@ -17,7 +17,72 @@ const MostPopularCourses = () => {
         </button>
       </li>
     ));
-  }, [categories]);
+  }, []);
+
+  const renderCourses = useMemo(() => {
+    const courses = [
+      {
+        id: "1",
+        title: "Learn React from Scratch",
+        imageUrl: "/images/courses_images/course_1.webp",
+        hours: "30 hours",
+        lessons: 25,
+        price: "$49.99",
+        instructor: {
+          name: "John Doe",
+          imageUrl: "/images/instructors_images/instructor_2.jpg",
+        },
+        rating: 4.5,
+        level: "Intermediate",
+      },
+      {
+        id: "2",
+        title: "Learn React from Scratch",
+        imageUrl: "/images/courses_images/course_1.webp",
+        hours: "30 hours",
+        lessons: 25,
+        price: "$49.99",
+        instructor: {
+          name: "John Doe",
+          imageUrl: "/images/instructors_images/instructor_2.jpg",
+        },
+        rating: 4.5,
+        level: "Intermediate",
+      },
+      {
+        id: "3",
+        title: "Learn React from Scratch",
+        imageUrl: "/images/courses_images/course_1.webp",
+        hours: "30 hours",
+        lessons: 25,
+        price: "$49.99",
+        instructor: {
+          name: "John Doe",
+          imageUrl: "/images/instructors_images/instructor_2.jpg",
+        },
+        rating: 4.5,
+        level: "Intermediate",
+      },
+      {
+        id: "4",
+        title: "Learn React from Scratch",
+        imageUrl: "/images/courses_images/course_1.webp",
+        hours: "30 hours",
+        lessons: 25,
+        price: "$49.99",
+        instructor: {
+          name: "John Doe",
+          imageUrl: "/images/instructors_images/instructor_2.jpg",
+        },
+        rating: 4.5,
+        level: "Intermediate",
+      },
+    ];
+    return courses
+      .slice(0, 6)
+      .map((course) => <CourseCard key={course.id} course={course} />);
+  }, []);
+
   return (
     <section className="pb-16 overflow-hidden">
       <div className="container mx-auto text-center">
@@ -26,16 +91,13 @@ const MostPopularCourses = () => {
           description="10,000+ unique online course list designs"
         />
 
-          <ul className="flex items-center gap-4 flex-wrap justify-center">
-            {renderCategories}
-          </ul>
+        <ul className="flex items-center gap-4 flex-wrap justify-center mb-10">
+          {renderCategories}
+        </ul>
 
-
-{/* courses cards */}
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols3 xl:grid-cols-4"></div>
-
-
-
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols3 xl:grid-cols-4 gap-8">
+          {renderCourses}
+        </div>
       </div>
     </section>
   );
