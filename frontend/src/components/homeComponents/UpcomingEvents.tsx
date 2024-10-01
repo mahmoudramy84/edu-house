@@ -1,5 +1,6 @@
 import React from "react";
-import { EventCard } from "../common";
+import { ButtonLink, EventCard, SectionHeader } from "../common";
+import { MdOutlineArrowOutward } from "react-icons/md";
 
 // Event Data
 const events = [
@@ -29,22 +30,29 @@ const events = [
   },
 ];
 
-
 const UpcomingEvents = () => {
   return (
     <section className="py-16">
-      <div className="container mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12">
-          Upcoming Events
-        </h2>
+      <div className="container text-center mx-auto">
+        <SectionHeader title="Upcoming Events" description="lorem" />
 
-        {/* Event Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           {events.map((event) => (
-            <EventCard key={event.id}  title={event.title} imageUrl={event.imageUrl}
-            date={event.date} location={event.location} description={event.description}/>
+            <EventCard
+              key={event.id}
+              title={event.title}
+              imageUrl={event.imageUrl}
+              date={event.date}
+              location={event.location}
+              description={event.description}
+            />
           ))}
         </div>
+
+
+        <ButtonLink href="#" withoutBg={true}>View All Events
+        <MdOutlineArrowOutward />
+        </ButtonLink>
       </div>
     </section>
   );
