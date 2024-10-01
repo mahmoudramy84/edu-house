@@ -9,7 +9,6 @@ import { Navigation, Pagination } from "swiper/modules";
 import { categories } from "@/data/categories";
 import CategoryCard from "./CategoryCard";
 
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const CategoriesSwiper = () => {
   return (
@@ -52,14 +51,7 @@ const CategoriesSwiper = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="hidden lg:flex items-center justify-between mt-4 ">
-        <div className="swiper-button-prev">
-          <FaArrowLeft className="cursor-pointer" />
-        </div>
-        <div className="swiper-button-next">
-          <FaArrowRight className="cursor-pointer" />
-        </div>
-      </div>
+     
     </>
   );
 };

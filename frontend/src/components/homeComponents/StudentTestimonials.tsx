@@ -54,7 +54,7 @@ const StudentTestimonials = () => {
               <p className="text-gray-600 dark:text-gray-300 mb-2">
                 {testimonial.feedback}
               </p>
-              <h3 className="text-lg font-semibold text-customPurple">
+              <h3 className="text-lg font-semibold text-customPurple dark:text-purple-400">
                 {testimonial.name}
               </h3>
             </SwiperSlide>

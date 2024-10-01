@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import { CiPlay1 } from "react-icons/ci";
+import Link from "next/link";
 
 const instructors = [
   {
@@ -86,9 +87,9 @@ const BestInstructors = () => {
                       alt={instructor.name}
                       className="w-24 h-24 rounded-full mx-auto mb-4"
                     />
-                    <h3 className="text-xl font-semibold mb-2">
+                    <Link href='#' className="text-xl font-semibold mb-2 hover:text-customPurple dark:hover:text-purple-300">
                       {instructor.name}
-                    </h3>
+                    </Link>
                     <p className="text-gray-600 dark:text-gray-300 mb-2">
                       {instructor.bio}
                     </p>
