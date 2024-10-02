@@ -36,7 +36,7 @@ const Navbar = () => {
         <div
           className={`w-full ${
             isOpen ? "block" : "hidden"
-          } lg:block lg:w-auto flex-1`}
+          } xl:block xl:w-auto flex-1`}
         >
           <NavLinks handleLinkClick={handleLinkClick} />
         </div>
@@ -59,7 +59,7 @@ const Navbar = () => {
 
           <button
             className="flex items-center justify-center p-2 w-10 h-10  
-      text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none 
+      text-sm text-gray-500 rounded-lg xl:hidden hover:bg-gray-100 focus:outline-none 
       dark:text-gray-400 dark:hover:bg-gray-700 "
             onClick={handleToggleMenu}
           >

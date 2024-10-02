@@ -6,6 +6,7 @@ interface IButtonLinkProps {
   children: React.ReactNode;
   addMargin?: boolean;
   withoutBg?: boolean;
+  isFullWidth?: boolean;
 }
 
 const ButtonLink = ({
@@ -13,11 +14,13 @@ const ButtonLink = ({
   children,
   addMargin,
   withoutBg,
+  isFullWidth,
 }: IButtonLinkProps) => {
   return (
     <Link
       href={href}
-      className={`px-6 py-3 border border-customPurple bg-customPurple text-white rounded-lg hover:bg-purple-800 transition-all flex items-center w-fit gap-2
+      className={`px-6 py-3 border border-customPurple bg-customPurple text-white rounded-lg hover:bg-purple-800 transition-all flex items-center
+        ${isFullWidth ? "w-full justify-center" : "  w-fit"} gap-2
       ${addMargin ? "mx-auto" : ""}
       ${
         withoutBg

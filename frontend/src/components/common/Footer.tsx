@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
+import SocialMediaIcons from "../SocialMediaIcons";
 
 const Footer = () => {
   return (
@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-4">
         {/* Column 1: Company Info */}
         <div>
-          <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white transition duration-300 ease-in-out transform hover:scale-105">
+          <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white  ">
             Edu City
           </h3>
           <p className="text-gray-600 dark:text-gray-400">
@@ -68,25 +68,7 @@ const Footer = () => {
             Follow Us
           </h4>
           <div className="flex space-x-3">
-            {[
-              { icon: <FaFacebook size={20} />, link: "https://facebook.com" },
-              { icon: <FaTwitter size={20} />, link: "https://twitter.com" },
-              { icon: <FaLinkedin size={20} />, link: "https://linkedin.com" },
-              {
-                icon: <FaInstagram size={20} />,
-                link: "https://instagram.com",
-              },
-            ].map(({ icon, link }) => (
-              <a
-                key={link}
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-gray-900 dark:hover:text-white transition duration-300 ease-in-out"
-              >
-                {icon}
-              </a>
-            ))}
+            <SocialMediaIcons />
           </div>
         </div>
       </div>

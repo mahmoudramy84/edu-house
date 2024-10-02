@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MouseEventHandler } from "react";
 
 const navLinks = [
   { link: "/", label: "Home" },
@@ -39,9 +38,9 @@ const NavLinks = ({ handleLinkClick }: TNavLinksProps) => {
   return (
     <ul
       className="font-medium flex flex-col rounded-lg rtl:space-x-reverse 
-        absolute left-0 top-20 w-full shadow-xl px-4
-        lg:flex-row  lg:w-auto lg:relative lg:top-0 lg:mt-0 lg:shadow-none lg:px-0
-    bg-lightGray lg:bg-white dark:bg-gray-800 lg:dark:bg-gray-900 dark:border-gray-700"
+        absolute left-0 top-20 w-full shadow-xl px-4 py-4 
+        xl:flex-row  xl:w-auto xl:relative xl:top-0 xl:mt-0 xl:shadow-none xl:px-0 xl:py-0
+    bg-lightGray dark:bg-gray-800 xl:bg-white xl:dark:bg-transparent dark:border-gray-700"
     >
       {renderNavLinks}
     </ul>
