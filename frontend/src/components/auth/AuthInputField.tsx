@@ -12,7 +12,7 @@ type TInputProps = {
   toggleShowPassword?: () => void;
 };
 
-const InputField = ({
+const AuthInputField = ({
   type,
   id,
   label,
@@ -53,4 +53,4 @@ const InputField = ({
   );
 };
 
-export default InputField;
+export default AuthInputField;

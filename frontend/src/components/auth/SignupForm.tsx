@@ -2,10 +2,10 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { InputField } from "../common";
 import Link from "next/link";
 import { SignupFormSchema, TSignupForm } from "./SignupFormSchema";
 import axios from "axios";
+import AuthInputField from "./AuthInputField";
 
 const SignupForm = () => {
   const {
@@ -58,7 +58,7 @@ const SignupForm = () => {
       <h1 className="text-center text-black dark:text-white font-bold text-xl mb-5">
         Signup
       </h1>
-      <InputField
+      <AuthInputField
         type="email"
         id="email"
         register={register("email")}
@@ -66,7 +66,7 @@ const SignupForm = () => {
         label="Email"
       />
 
-      <InputField
+      <AuthInputField
         type="password"
         id="password"
         register={register("password")}
@@ -76,7 +76,7 @@ const SignupForm = () => {
         toggleShowPassword={() => setShowPassword(!showPassword)}
       />
 
-      <InputField
+      <AuthInputField
         type="password"
         id="confirm_password"
         register={register("confirm_password")}
@@ -85,7 +85,7 @@ const SignupForm = () => {
       />
 
       <div className="grid md:grid-cols-2 md:gap-6">
-        {/* <InputField
+        {/* <AuthInputField
           type="text"
           id="first_name"
           register={register("first_name")}
@@ -93,7 +93,7 @@ const SignupForm = () => {
           label={"First Name"}
         />
 
-        <InputField
+        <AuthInputField
           type="text"
           id="last_name"
           register={register("last_name")}
@@ -102,7 +102,7 @@ const SignupForm = () => {
 
         /> */}
 
-        <InputField
+        <AuthInputField
           type="text"
           id="name"
           register={register("name")}

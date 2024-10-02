@@ -2,10 +2,10 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { InputField } from "../common";
 import Link from "next/link";
 import { LoginFormSchema, TLoginForm } from "./LoginFormSchema";
 import { signIn } from "next-auth/react";
+import AuthInputField from "./AuthInputField";
 
 const LoginForm = () => {
   const {
@@ -41,7 +41,7 @@ const LoginForm = () => {
         Login
         <p className="text-xs font-normal ">logo will be here</p>
       </h1>
-      <InputField
+      <AuthInputField
         type="email"
         id="email"
         register={register("email")}
@@ -49,7 +49,7 @@ const LoginForm = () => {
         label="Email"
       />
 
-      <InputField
+      <AuthInputField
         type="password"
         id="password"
         register={register("password")}
