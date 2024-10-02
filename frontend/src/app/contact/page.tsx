@@ -33,7 +33,7 @@ const Contact = () => {
         </div>
 
         {/* contact info */}
-        <div className="grid grid-cols-12 gap-8">
+        <div className="grid grid-cols-12 gap-8 md:grid-cols-none md:flex md:flex-col-reverse lg:grid lg:grid-cols-12">
           <div className="col-span-12 md:col-span-4 space-y-10">
             <div className="flex flex-col space-y-8">
               {contactInfo.map((info, index) => (
@@ -57,7 +57,7 @@ const Contact = () => {
 
           {/* form */}
           <div className="col-span-12 md:col-span-8">
-          <ContactForm/>
+            <ContactForm />
           </div>
         </div>
       </div>
