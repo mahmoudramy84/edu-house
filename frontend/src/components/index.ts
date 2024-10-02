@@ -1,4 +1,10 @@
-import ToggleMenuButton from "./ToggleMenuButton";
+
+import SocialMediaIcons from "./SocialMediaIcons";
 
 
-export {ToggleMenuButton}
+
+export {SocialMediaIcons}
+
+
+
+
