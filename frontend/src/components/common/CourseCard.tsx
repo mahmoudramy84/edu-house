@@ -1,5 +1,6 @@
 import { TCourse } from "@/types/courseType";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { FaCartPlus, FaRegStar, FaStar } from "react-icons/fa";
 
@@ -14,7 +15,7 @@ const CourseCard = ({ course }: { course: TCourse }) => {
         className="w-full h-32 object-cover mb-4"
       />
 
-      <h3 className="text-lg font-semibold mb-2">{course.title}</h3>
+      <Link href='#' className="text-lg font-semibold mb-2 transition-all hover:text-customPurple dark:hover:text-purple-400">{course.title}</Link>
 
       <div className="flex justify-between items-center mb-2 text-gray-600 dark:text-gray-400">
         <span>{course.hours}</span>
