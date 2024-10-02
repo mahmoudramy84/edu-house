@@ -26,8 +26,11 @@ const CategoryFilter = () => {
           .replace("&", "")
           .replace(/\s+/g, "-");
         return (
-          <>
-            <div className="flex items-center justify-between">
+          <div  key={category.id}>
+            <div
+              className="flex items-center justify-between"
+             
+            >
               <div className="flex items-center gap-3">
                 <input
                   type="checkbox"
@@ -45,7 +48,7 @@ const CategoryFilter = () => {
               </div>
               <div>(12)</div>
             </div>
-          </>
+          </div>
         );
       })}
     </>

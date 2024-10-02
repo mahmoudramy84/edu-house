@@ -1,3 +1,4 @@
+"use client";
 import { CourseCard, SectionHeader } from "@/components/common";
 import {
   CategoryFilter,
@@ -10,8 +11,10 @@ import {
   DisclosureButton,
   DisclosurePanel,
 } from "@headlessui/react";
+import { useState } from "react";
 
 import { IoIosArrowDown } from "react-icons/io";
+import { RiBarChartHorizontalLine } from "react-icons/ri";
 
 const courses = [
   {
@@ -77,6 +80,8 @@ const Courses = () => {
     <CourseCard key={course.id} course={course} />
   ));
 
+  const [open, setOpen] = useState<boolean>(false);
+
   return (
     <div className="py-16">
       <div className="container mx-auto">
@@ -90,7 +95,11 @@ const Courses = () => {
 
         <div className="grid grid-cols-12 gap-8">
           {/* filter section */}
-          <div className="col-span-12 lg:col-span-3">
+          <div
+            className={`col-span-12 lg:col-span-3 lg:block ${
+              open ? "block" : "hidden"
+            }`}
+          >
             <Disclosure as="div" className="p-6 border-b-2" defaultOpen={true}>
               <DisclosureButton className="group flex w-full items-center justify-between">
                 <span className="text-2xl font-medium  text-black dark:text-white dark:group-data-[hover]:text-white/80">
@@ -126,7 +135,7 @@ const Courses = () => {
                 <IoIosArrowDown className="size-5 dark:fill-white/60 dark:group-data-[hover]:fill-white/50 group-data-[open]:rotate-180" />
               </DisclosureButton>
               <DisclosurePanel className="mt-6 text-sm/5 dark:text-white/50 space-y-3">
-                {/* category filter */}
+                {/* instructor filter */}
                 <InstructorsFilter />
               </DisclosurePanel>
             </Disclosure>
@@ -140,7 +149,7 @@ const Courses = () => {
                 <IoIosArrowDown className="size-5 dark:fill-white/60 dark:group-data-[hover]:fill-white/50 group-data-[open]:rotate-180" />
               </DisclosureButton>
               <DisclosurePanel className="mt-6 text-sm/5 dark:text-white/50 space-y-3">
-                {/* category filter */}
+                {/* level filter */}
                 <LevelFilter />
               </DisclosurePanel>
             </Disclosure>
@@ -148,10 +157,22 @@ const Courses = () => {
 
           {/* courses section */}
           <div className="col-span-12 lg:col-span-9 p-6">
-            <div className="mb-4">
-              Showing
-              <span>7</span>
-              total results
+            <div className="mb-4 flex items-center justify-between">
+              <div>
+                Showing
+                <span> 7 </span>
+                total results
+              </div>
+              <div className="block lg:hidden">
+                <button
+                  onClick={() => setOpen(!open)}
+                  className="flex items-center gap-2 bg-lightGray p-4 py-2 rounded-lg hover:bg-indigo-100 
+                transition-all duration-300 dark:bg-customPurple dark:hover:bg-purple-600"
+                >
+                  <RiBarChartHorizontalLine />
+                  Filter
+                </button>
+              </div>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
               {renderCourses}
