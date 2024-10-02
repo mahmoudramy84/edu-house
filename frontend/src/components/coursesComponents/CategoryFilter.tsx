@@ -11,7 +11,7 @@ const CategoryFilter = () => {
             name="category"
             id="category-all"
             value="all"
-            className="h-5 w-5 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+            className="h-5 w-5 min-w-5 min-h-5 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
           />{" "}
           <label htmlFor="category-all" className="text-lg font-normal">
             All
@@ -34,7 +34,7 @@ const CategoryFilter = () => {
                   name="category"
                   id={`category-${modifiedId}`}
                   value={category.id}
-                  className="h-5 w-5 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+                  className="h-5 w-5 min-w-5 min-h-5 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
                 />{" "}
                 <label
                   htmlFor={`category-${modifiedId}`}

@@ -10,7 +10,7 @@ const InstructorsFilter = () => {
               name="category"
               value={instructor}
               id={instructor}
-              className="h-5 w-5 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+              className="h-5 w-5 min-w-5 min-h-5 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
             />{" "}
             <label
               htmlFor={instructor}
