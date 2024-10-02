@@ -19,7 +19,7 @@ export default function RootLayout({
       <body className="h-screen relative">
         <Providers attribute="class" defaultTheme="system">
           <Navbar />
-          <div className="pt-12">{children}</div>
+          <div className="pt-16">{children}</div>
           <Footer/>
         </Providers>
       </body>
