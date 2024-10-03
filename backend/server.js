@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000;
 const trackRoutes = require('./routes/tracks');
 const courseRoutes = require('./routes/courses');
 const lessonRoutes = require('./routes/lessons');
-const userRoutes = require('./routes/users');
+const authRoutes = require('./routes/authRoutes');
 
 app.use(express.json());
 
@@ -36,7 +36,7 @@ mongoose.connect(mongoURI).then(() => {
 app.use('/tracks', trackRoutes);
 app.use('/courses', courseRoutes);
 app.use('/lessons', lessonRoutes);
-app.use('/users', userRoutes);
+app.use('/auth', authRoutes);
 
 
 app.listen(port, () => {
