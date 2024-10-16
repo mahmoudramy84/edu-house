@@ -6,13 +6,16 @@ import Link from "next/link";
 import { LoginFormSchema, TLoginForm } from "./LoginFormSchema";
 import { signIn } from "next-auth/react";
 import AuthInputField from "./AuthInputField";
+import { useRouter } from "next/navigation";
+import cn from "@/lib/utils";
 
 const LoginForm = () => {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<TLoginForm>({
     resolver: zodResolver(LoginFormSchema),
     mode: "onChange",
@@ -28,7 +31,9 @@ const LoginForm = () => {
       console.error("Login failed", user.error);
     } else {
       console.log("Login successful", user);
+      // router.push("/");
     }
+
     reset();
   };
 
@@ -59,9 +64,13 @@ const LoginForm = () => {
 
       <button
         type="submit"
-        className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none  font-medium rounded-lg  w-full sm:w-auto px-4 py-2 text-xs text-center dark:bg-blue-600 dark:hover:bg-blue-700"
+        disabled={isSubmitting}
+        className={cn(
+          "text-white bg-blue-700 hover:bg-blue-800 focus:outline-none font-medium rounded-lg w-full sm:w-auto px-4 py-2 text-xs text-center dark:bg-blue-600 dark:hover:bg-blue-700",
+          isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+        )}
       >
-        Login
+        {isSubmitting ? "Loading..." : "Login"}
       </button>
       <p className="text-center text-xs mt-4 text-gray-600 dark:text-gray-300">
         Don&apos;t have an account?{" "}

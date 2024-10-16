@@ -2,9 +2,8 @@ import { z } from "zod";
 
 export const SignupFormSchema = z
   .object({
-    // first_name: z.string().min(1, { message: "First Name is required" }),
-    // last_name: z.string().min(1, { message: "Last Name is required" }),
-    name: z.string().min(1, { message: "Name is required" }),
+    first_name: z.string().min(1, { message: "First Name is required" }),
+    last_name: z.string().min(1, { message: "Last Name is required" }),
     email: z
       .string()
       .min(1, { message: "Email is required " })
