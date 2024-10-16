@@ -1,6 +1,5 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import axios from "axios";
-import { signIn } from "next-auth/react";
 
 export const loginOptions = {
   provider: [
@@ -31,19 +30,7 @@ export const loginOptions = {
       },
     }),
   ],
-  callbacks: {
-    async jwt({ token, user }) {
-      if (user) {
-        token.accessToken = user.token;
-      }
-      return token;
-    },
-    async session({ session, token }) {
-      session.user = token.accessToken;
-      return session;
-    },
-  },
-  pages: {
-    signIn: "/auth/login",
+  session: {
+    strategy: "jwt",
   },
 };
