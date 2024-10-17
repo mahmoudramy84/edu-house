@@ -4,10 +4,12 @@ import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Link from "next/link";
 import { LoginFormSchema, TLoginForm } from "./LoginFormSchema";
-import { signIn } from "next-auth/react";
+import { getSession, signIn } from "next-auth/react";
 import AuthInputField from "./AuthInputField";
+import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -24,12 +26,16 @@ const LoginForm = () => {
       email,
       password,
     });
+
     if (user?.error) {
-      console.error("Login failed", user.error);
+      // console.error("Login failed", user.error);
+      alert(`Login failed: ${user.error}`);
     } else {
       console.log("Login successful", user);
+
+      // router.push("/");
     }
-    reset();
+    // reset();
   };
 
   return (

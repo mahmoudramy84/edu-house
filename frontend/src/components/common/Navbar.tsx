@@ -6,7 +6,7 @@ import Search from "./Search";
 import ShoppingCartIcon from "./ShoppingCartIcon";
 import NavLinks from "./NavLinks";
 import { FaBars } from "react-icons/fa";
-import { MouseEventHandler, useState } from "react";
+import {  useState } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
