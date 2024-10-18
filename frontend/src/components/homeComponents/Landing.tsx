@@ -13,7 +13,7 @@ const Landing = () => {
           Discover courses taught by industry experts and elevate your skills
           with us.
         </p>
-        <div className="flex justify-center space-x-4 mb-8">
+        <div className="flex justify-center space-x-4 mb-8 relative z-10">
           <button className="bg-transparent  hover:bg-purple-800 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all">
             Join Us
           </button>
