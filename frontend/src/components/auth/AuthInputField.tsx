@@ -38,7 +38,7 @@ const AuthInputField = ({
       >
         {label}
       </label>
-      <p className="text-[10px] text-red-600 dark:text-[#ff0000]">{errors}</p>
+      <p className="text-[10px] text-red-600 dark:text-rose-200">{errors}</p>
 
       {type === "password" && toggleShowPassword && (
         <button

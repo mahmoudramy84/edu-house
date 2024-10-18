@@ -4,16 +4,15 @@ import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Link from "next/link";
 import { LoginFormSchema, TLoginForm } from "./LoginFormSchema";
-import { getSession, signIn } from "next-auth/react";
 import AuthInputField from "./AuthInputField";
 import { useRouter } from "next/navigation";
+import axios from "axios";
 
 const LoginForm = () => {
   const router = useRouter();
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm<TLoginForm>({
     resolver: zodResolver(LoginFormSchema),
@@ -21,21 +20,25 @@ const LoginForm = () => {
   });
 
   const onSubmit: SubmitHandler<TLoginForm> = async ({ email, password }) => {
-    const user = await signIn("credentials", {
-      redirect: false,
-      email,
-      password,
-    });
+    try {
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/auth/login`,
+        {
+          redirect: false,
+          email,
+          password,
+        }
+      );
+      console.log("login response", response);
 
-    if (user?.error) {
-      // console.error("Login failed", user.error);
-      alert(`Login failed: ${user.error}`);
-    } else {
-      console.log("Login successful", user);
-
-      // router.push("/");
+      if (response.status === 200) {
+        console.log("Login successful");
+      }
+    } catch (error) {
+      console.error("Login failed", error);
     }
-    // reset();
+    // router.push("/");
+
   };
 
   return (

@@ -6,8 +6,19 @@ import Link from "next/link";
 import { SignupFormSchema, TSignupForm } from "./SignupFormSchema";
 import axios from "axios";
 import AuthInputField from "./AuthInputField";
+import { useRouter } from "next/navigation";
+import cn from "@/lib/utlis";
+
+const errorMessage = {
+  emailExists: "Email already exists. Please use a different email.",
+  genericError: "An error occurred, Please try again.",
+};
 
 const SignupForm = () => {
+  const [signupResponse, setIsSignupResponse] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -25,6 +36,7 @@ const SignupForm = () => {
     password,
   }) => {
     try {
+      setLoading(true);
       const username = `${first_name.toLowerCase()}.${last_name.toLowerCase()}`;
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_BASE_URL}/auth/signup`,
@@ -38,12 +50,20 @@ const SignupForm = () => {
       console.log("signup response", response);
 
       if (response.status === 201) {
-        console.log("Account created successfully");
+        reset();
+        setTimeout(() => {
+          router.push("/auth/login");
+        }, 1000);
       }
     } catch (error) {
-      console.error("Error creating account", error);
+      if (axios.isAxiosError(error) && error.response?.status === 400) {
+        setIsSignupResponse(errorMessage.emailExists);
+      } else {
+        setIsSignupResponse(errorMessage.genericError);
+      }
+    } finally {
+      setLoading(false);
     }
-    reset();
   };
 
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -56,6 +76,7 @@ const SignupForm = () => {
       <h1 className="text-center text-black dark:text-white font-bold text-xl mb-5">
         Signup
       </h1>
+
       <AuthInputField
         type="email"
         id="email"
@@ -102,10 +123,38 @@ const SignupForm = () => {
 
       <button
         type="submit"
-        className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none  font-medium rounded-lg  w-full sm:w-auto px-4 py-2 text-xs text-center dark:bg-blue-600 dark:hover:bg-blue-700"
+        disabled={loading}
+        className={cn(
+          "text-white bg-blue-700 hover:bg-blue-800 focus:outline-none  font-medium rounded-lg  w-full sm:w-auto px-4 py-2 text-xs text-center dark:bg-blue-600 dark:hover:bg-blue-700",
+          { "bg-blue-900": loading }
+        )}
       >
-        Signup
+        {loading ? (
+          <svg
+            className="animate-spin h-5 w-5 text-white"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              className="opacity-25"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              strokeWidth="4"
+            />
+            <path
+              className="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12H4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+            />
+          </svg>
+        ) : (
+          "Signup"
+        )}
       </button>
+      <p className="mt-4 text-red-600 dark:text-rose-200">{signupResponse}</p>
       <p className="text-center text-xs mt-4 text-gray-600 dark:text-gray-300">
         Already have an account?{" "}
         <Link href="/auth/login" className="text-blue-600 hover:underline">
