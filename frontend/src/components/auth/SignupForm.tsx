@@ -50,6 +50,8 @@ const SignupForm = () => {
       console.log("signup response", response);
 
       if (response.status === 201) {
+       
+
         reset();
         setTimeout(() => {
           router.push("/auth/login");

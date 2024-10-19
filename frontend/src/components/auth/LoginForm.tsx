@@ -8,6 +8,7 @@ import AuthInputField from "./AuthInputField";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import cn from "@/lib/utlis";
+import Cookies from "js-cookie";
 
 const LoginForm = () => {
   const [loading, setLoading] = useState(false);
@@ -36,7 +37,16 @@ const LoginForm = () => {
       console.log("login response", response);
 
       if (response.status === 200) {
-        console.log("Login successful");
+        const token = response.data.token;
+        Cookies.set("token", token, {
+          // for 2 hours
+          maxAge: 2 * 60 * 60 * 1000,
+          secure: process.env.NODE_ENV === "production",
+          sameSite: "none",
+          httpOnly: true,
+          path: "/",
+        });
+
         setTimeout(() => {
           router.push("/");
         }, 1000);
