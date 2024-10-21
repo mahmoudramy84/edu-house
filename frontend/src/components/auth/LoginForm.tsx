@@ -9,10 +9,13 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import cn from "@/lib/utlis";
 import Cookies from "js-cookie";
+import { useUserContext } from "@/context/UserContext";
 
 const LoginForm = () => {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+
+  const { setIsUserLoggedIn } = useUserContext();
 
   const {
     register,
@@ -39,16 +42,14 @@ const LoginForm = () => {
       if (response.status === 200) {
         const token = response.data.token;
         Cookies.set("token", token, {
-          // for 2 hours
-          maxAge: 2 * 60 * 60 * 1000,
-          secure: process.env.NODE_ENV === "production",
-          sameSite: "none",
-          httpOnly: true,
           path: "/",
         });
 
+        setIsUserLoggedIn(true);
+
         setTimeout(() => {
           router.push("/");
+          router.refresh();
         }, 1000);
       }
     } catch (error) {

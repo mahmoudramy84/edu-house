@@ -3,6 +3,7 @@ import { Footer, Navbar } from "@/components/common";
 import Providers from "./Providers";
 
 import "./globals.css";
+import { UserProvider } from "@/context/UserContext";
 
 export const metadata: Metadata = {
   title: "Edu House",
@@ -18,9 +19,11 @@ export default function RootLayout({
     <html lang="en">
       <body className="h-screen relative">
         <Providers attribute="class" defaultTheme="system">
-          <Navbar />
-          <div className="pt-16">{children}</div>
-          <Footer/>
+          <UserProvider>
+            <Navbar />
+            <div className="pt-16">{children}</div>
+            <Footer />
+          </UserProvider>
         </Providers>
       </body>
     </html>
