@@ -44,7 +44,6 @@ const LoginForm = () => {
         Cookies.set("token", token, {
           path: "/",
         });
-
         setIsUserLoggedIn(true);
 
         setTimeout(() => {
