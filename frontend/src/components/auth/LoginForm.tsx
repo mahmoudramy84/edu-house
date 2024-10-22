@@ -1,12 +1,12 @@
 "use client";
 import { zodResolver } from "@hookform/resolvers/zod";
-import React from "react";
+import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Link from "next/link";
 import { LoginFormSchema, TLoginForm } from "./LoginFormSchema";
-import { signIn } from "next-auth/react";
 import AuthInputField from "./AuthInputField";
 import { useRouter } from "next/navigation";
+<<<<<<< HEAD
 import cn from "@/lib/utils";
 
 const LoginForm = () => {
@@ -16,12 +16,30 @@ const LoginForm = () => {
     handleSubmit,
     reset,
     formState: { errors, isSubmitting },
+=======
+import axios from "axios";
+import cn from "@/lib/utlis";
+import Cookies from "js-cookie";
+import { useUserContext } from "@/context/UserContext";
+
+const LoginForm = () => {
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+
+  const { setIsUserLoggedIn } = useUserContext();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+>>>>>>> develop
   } = useForm<TLoginForm>({
     resolver: zodResolver(LoginFormSchema),
     mode: "onChange",
   });
 
   const onSubmit: SubmitHandler<TLoginForm> = async ({ email, password }) => {
+<<<<<<< HEAD
     const user = await signIn("credentials", {
       redirect: false,
       email,
@@ -35,6 +53,37 @@ const LoginForm = () => {
     }
 
     reset();
+=======
+    try {
+      setLoading(true);
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/auth/login`,
+        {
+          redirect: false,
+          email,
+          password,
+        }
+      );
+      console.log("login response", response);
+
+      if (response.status === 200) {
+        const token = response.data.token;
+        Cookies.set("token", token, {
+          path: "/",
+        });
+        setIsUserLoggedIn(true);
+
+        setTimeout(() => {
+          router.push("/");
+          router.refresh();
+        }, 1000);
+      }
+    } catch (error) {
+      console.error("Login failed", error);
+    } finally {
+      setLoading(false);
+    }
+>>>>>>> develop
   };
 
   return (
@@ -64,6 +113,7 @@ const LoginForm = () => {
 
       <button
         type="submit"
+<<<<<<< HEAD
         disabled={isSubmitting}
         className={cn(
           "text-white bg-blue-700 hover:bg-blue-800 focus:outline-none font-medium rounded-lg w-full sm:w-auto px-4 py-2 text-xs text-center dark:bg-blue-600 dark:hover:bg-blue-700",
@@ -71,6 +121,15 @@ const LoginForm = () => {
         )}
       >
         {isSubmitting ? "Loading..." : "Login"}
+=======
+        disabled={loading}
+        className={cn(
+          "text-white bg-blue-700 hover:bg-blue-800 focus:outline-none  font-medium rounded-lg  w-full sm:w-auto px-4 py-2 text-xs text-center dark:bg-blue-600 dark:hover:bg-blue-700",
+          { "bg-blue-900": loading }
+        )}
+      >
+        {loading ? "loading..." : "Login"}
+>>>>>>> develop
       </button>
       <p className="text-center text-xs mt-4 text-gray-600 dark:text-gray-300">
         Don&apos;t have an account?{" "}
