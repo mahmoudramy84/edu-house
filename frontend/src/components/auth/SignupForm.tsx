@@ -36,20 +36,12 @@ const SignupForm = () => {
     password,
   }) => {
     try {
-<<<<<<< HEAD
-      const name = `${first_name.toLowerCase()}.${last_name.toLowerCase()}`;
-=======
       setLoading(true);
       const username = `${first_name.toLowerCase()}.${last_name.toLowerCase()}`;
->>>>>>> develop
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_BASE_URL}/auth/signup`,
         {
-<<<<<<< HEAD
-          name,
-=======
           username,
->>>>>>> develop
           email,
           password,
         }
